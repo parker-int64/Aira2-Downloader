@@ -15,7 +15,7 @@ var windowClose = document.getElementById("close")
 
 // 查找设置的ID
 var appSettings = document.getElementById("app-settings")
-var loadPages = document.getElementById("contentMain") // 加载设置页面，内容加载至contentMain中
+var iframeSrc = document.getElementById("inner-iframe")
 
 
 // 成功找到则增加监听事件，click为按下，若监听到按下则渲染进程发送最小化信号
@@ -55,19 +55,27 @@ if (windowClose) {
 }
 
 
+/* 使用iframe加载设置页面 */
 if (appSettings){
+    var toggled = false
     appSettings.addEventListener("click", () =>{
-        var loadHTML = "<div class=\"content contentMain webPageView\">"
-        +"<iframe class=\"content contentMain webPageView iframe-css\" name=\"inner-web\" src=\"settings-index.html\" id=\"setting-page\" frameborder=\"0\"></iframe>"
-        +"</div>"
-        loadPages.innerHTML = loadHTML
+        toggled = !toggled
+        if(toggled){iframeSrc.src = "settings-index.html"}
+        else {iframeSrc.src = "welcome.html" }                
     })
+    
 } else {
     console.log("Failed to find element...")
 }
 
 
+/*
+    根据用户设置的主题加载对应的CSS
+*/
 
+function loadTheme(){
+
+}
 
 
 

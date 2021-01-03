@@ -3,3 +3,14 @@
 
 window.ipcRenderer = require('electron').ipcRenderer;
 window.remote = require('electron').remote
+const fs = require('fs')
+
+const filePath = "./config/settings.conf"
+window.writeFileSync = fileContents =>{
+    fs.writeFileSync(filePath,fileContents)
+}
+
+window.appendFileSync = fileContents =>{
+    fs.appendFileSync(filePath,fileContents)
+}
+

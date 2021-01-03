@@ -1,7 +1,7 @@
 /*
     控制应用生命周期和创建原生平台窗口的模组从此引入
 */ 
-const {app, BrowserWindow, ipcMain ,window, remote} = require('electron')
+const {app, BrowserWindow, ipcMain, remote,BrowserView} = require('electron')
 const path = require('path')
 require('events').EventEmitter.defaultMaxListeners = 0 
 
@@ -18,10 +18,10 @@ require('events').EventEmitter.defaultMaxListeners = 0
 */
 app.whenReady().then(() => {
     const mainWindow = new BrowserWindow({
-        width:1024,
-        height:728,
-        minHeight:728,
-        minWidth: 1024,
+        width:880,
+        height:650,
+        minHeight:600,
+        minWidth: 800,
         frame: false,    // 用于创建无边窗口
         backgroundColor: '#26282C',
         icon: path.join(__dirname, "../assets/windows-icon32.ico"),
@@ -32,7 +32,7 @@ app.whenReady().then(() => {
   })
 
     // 加载HTML文件
-    mainWindow.loadFile("index.html")
+    mainWindow.loadFile("./html/index.html")
   
     // 打开开发人员工具
     mainWindow.webContents.openDevTools()
@@ -45,12 +45,12 @@ app.whenReady().then(() => {
     // 窗口触发最大化这个事件，图标变为交叠样式
     mainWindow.on('maximize', ()=>{
         mainWindow.webContents.send("change-icon")
-    })
+    });
 
     // 窗口触发向下还原原来大小这个事件，图案变为框
     mainWindow.on('unmaximize', ()=>{
         mainWindow.webContents.send("restore-icon")
-    })
+    });
     
     // 最大化窗口
     ipcMain.on("window-maxmize", ()=>{
@@ -68,6 +68,7 @@ app.whenReady().then(() => {
         mainWindow.close();
     });
 
+
 })
 
 
@@ -77,4 +78,3 @@ app.whenReady().then(() => {
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
-

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>   
-    <link rel="stylesheet" type = "text/css" href="css/style.css">
-    <link rel="stylesheet" type = "text/css" href="css/components.css">
+    <title>Aria2-Downloader</title>   
+    <link rel="stylesheet" id="main-style" type = "text/css" href="../css/styleLight.css">
+    <link rel="stylesheet" id="components-style" type = "text/css" href="../css/componentsLight.css">
   </head>
   <body>
-    <div class = "container">
+    <div class = "container" id="container">
     <div class="titleBar">
       <div class = "titleBar icon"></div>
       <div class = "titleBar windowTitle">Aria2</div>
@@ -37,12 +37,13 @@
             <!---不好调margin，padding直接加上空白列表-->
           </li>
           <li class = "menuFunctions app-toolkits" id = "toolkits" title="工具箱"></li>
-          
-          
         </ul>
         <div class = "menuFunctions app-settings" id = "app-settings" title="软件设置"></div>
       </div>
       <div class = "content  contentMain" id ="contentMain">
+        <div class="content  contentMain webPageView">
+          <iframe src="welcome.html" frameborder="0" id="inner-iframe"></iframe>
+        </div>
         <!--此处放入iframe--->
         <!-- <div class = "content contentMain webPageView">
           <iframe class="content contentMain webPageView iframe-css" src="settings-index.html" id = "setting-page" frameborder="0"></iframe>
@@ -57,6 +58,6 @@
   </div>
     
 
-    <script src="./src/renderer.js"></script>
+    <script src="../src/renderer.js"></script>
   </body>
 </html>

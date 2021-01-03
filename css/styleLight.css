@@ -1,14 +1,15 @@
-/*暗色模式主题 Preload*/
+/* 亮色模式主题 */
 /*
     预加载CSS样式表
 */
 html,body{
     width: 100%;
     height: 100%;
-    margin:0;
+    margin:0; 
     padding:0;
     overflow: hidden;
     -webkit-user-select: none;
+    
 }
 
 body {
@@ -32,8 +33,8 @@ body {
     justify-content: space-between;
     width: 100%;
     height: 30px;
-    color: rgb(204,204,204);
-    background-color: rgb(50,52,57);
+    color: black;
+    background-color: rgb(221,221,221);
     -webkit-app-region: drag;
 }
 
@@ -53,8 +54,8 @@ body {
     align-items: center;
     width: 65px;
     height: 100%;
-    color:rgb(204,204,204);
-    background-color: rgb(72,75,82);
+    color:black;
+    background-color: #f3f3f3;
     -webkit-app-region: no-drag;
 }
 
@@ -79,12 +80,10 @@ body {
     width: calc(100% - 65px);
     height: 100%;
     font-size: 14px;
-    color:rgb(204,204,204);
-    background-color: rgb(47,50,55);
+    color:black;
+    background-color: white;
     -webkit-app-region: no-drag;
 }
-
-
 
 /*页脚*/
 .footer {
@@ -96,8 +95,3 @@ body {
     background-color: rgb(203,105,51);
     -webkit-app-region: no-drag;
 }
-
-
-
-
-
