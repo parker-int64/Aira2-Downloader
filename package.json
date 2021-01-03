@@ -1,0 +1,43 @@
+{
+  "name": "aira2-downloader",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "Electron",
+    "application"
+  ],
+  "author": "Parker",
+  "devDependencies": {
+    "electron": "^11.1.0"
+  },
+  "build": {
+    "productName": "Aira2-Downloader",
+    "mac": {
+      "icon": "./assets/windows-icon32.ico"
+    },
+    "win": {
+      "icon": "./assets/windows-icon32.ico"
+    },
+    "linux": {
+      "icon": "./assets/windows-icon32.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "guid": "Aira2",
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./assets/windows-icon32.ico",
+      "uninstallerIcon": "./assets/uninstall-aira2.ico",
+      "installerHeaderIcon": "./assets/windows-icon32.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Aira2"
+    }
+  }
+}
+

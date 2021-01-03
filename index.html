@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Hello World!</title>   
+    <link rel="stylesheet" type = "text/css" href="css/style.css">
+    <link rel="stylesheet" type = "text/css" href="css/components.css">
+  </head>
+  <body>
+    <div class = "container">
+    <div class="titleBar">
+      <div class = "titleBar icon"></div>
+      <div class = "titleBar windowTitle">Aria2</div>
+      <div class = "titleBar windowControlContainer">
+        <div class = "windowControlContainer windowMinimizeControl" id="min"> <!---最小化-->
+        </div>
+        <div class = "windowControlContainer windowMaximumControl" id="max"> <!--最大化-->
+        </div>
+        <div class = "windowControlContainer windowsClose" id="close"> <!--关闭按钮-->
+        </div>
+      </div>
+    </div>
+    <div class = "content">
+      <div class = "content contentMenu">
+        <ul>   <!---菜单栏无序列表--->
+          <li>
+            <!---不好调margin，padding直接加上空白列表-->
+          </li>
+          <li class = "menuFunctions app-download" id = "app-download" title="追踪正在下载项目"></li>
+          <li>
+            <!---不好调margin，padding直接加上空白列表-->
+          </li>
+          <li class = "menuFunctions app-file-explorer" id = "file-view" title="已下载项目"></li>
+          <li>
+            <!---不好调margin，padding直接加上空白列表-->
+          </li>
+          <li class = "menuFunctions app-toolkits" id = "toolkits" title="工具箱"></li>
+          
+          
+        </ul>
+        <div class = "menuFunctions app-settings" id = "app-settings" title="软件设置"></div>
+      </div>
+      <div class = "content  contentMain" id ="contentMain">
+        <!--此处放入iframe--->
+        <!-- <div class = "content contentMain webPageView">
+          <iframe class="content contentMain webPageView iframe-css" src="settings-index.html" id = "setting-page" frameborder="0"></iframe>
+        </div> -->
+      </div>
+    </div>
+    <!-- <div class="footer">当前版本
+      HTML: v0.0.1
+      CSS: v0.0.2
+      JS: v0.0.1
+    </div> -->
+  </div>
+    
+
+    <script src="./src/renderer.js"></script>
+  </body>
+</html>

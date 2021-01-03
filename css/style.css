@@ -1,0 +1,102 @@
+/*暗色模式主题 Preload*/
+/*
+    预加载CSS样式表
+*/
+html,body{
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    -webkit-user-select: none;
+}
+
+body {
+    -webkit-app-region: drag;
+    background-color: rgb(38,40,44);
+}
+
+.container{
+    height: 100%;
+    color:rgb(204,204,204);
+    display: flex;
+    flex-direction: column;
+    -webkit-app-region: no-drag;
+}
+
+/*--标题栏--*/
+.titleBar {
+    margin-left: 1px;   /* 留出左边空间，让body可以放大缩小 */
+    padding-right: 5px; /* 留出右边空间，让body可以放大缩小 */ 
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 30px;
+    color: rgb(204,204,204);
+    background-color: rgb(50,52,57);
+    -webkit-app-region: drag;
+}
+
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    -webkit-app-region: no-drag;
+}
+
+/*菜单栏*/
+.contentMenu {
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 65px;
+    height: 100%;
+    color:rgb(204,204,204);
+    background-color: rgb(72,75,82);
+    -webkit-app-region: no-drag;
+}
+
+/*列表设置*/
+.contentMenu li {
+    width:38px;
+    list-style-type: none; /*用作去掉无序列表的点*/
+    padding: 8px;
+    margin:0px;
+}
+
+.contentMenu ul {
+    display: table;
+    margin: 0px auto; /*margin和padding设为0，默认居中*/
+    padding: 0px;
+}
+
+/*主要内容*/
+.contentMain {
+    justify-content: flex-start;
+    width: calc(100%-80px);
+    height: 100%;
+    font-size: 14px;
+    color:rgb(204,204,204);
+    background-color: rgb(47,50,55);
+    -webkit-app-region: no-drag;
+}
+
+
+
+/*页脚*/
+.footer {
+    text-align: center;
+    clear:both;
+    width: 100%;
+    height: 20px;
+    color: rgb(249,227,191);
+    background-color: rgb(203,105,51);
+    -webkit-app-region: no-drag;
+}
+
+
+
+
+

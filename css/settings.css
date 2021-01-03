@@ -1,0 +1,111 @@
+/* 
+*   settings 页面样式表
+*/
+html,body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    animation: fadeInAnimation ease 0.4s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+    -webkit-user-select: none;
+}
+
+
+/* 网页加载动画--淡入 */
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(72,75,82);
+    display:flex;
+    flex-direction: row;
+}
+/* 设置页面下导航栏CSS */
+.settings-menu {
+    width: 100px;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    border:none;
+    font-size: 14px;
+    color: rgb(204,204,204);
+    flex-direction: column;
+
+}
+
+/* 设置页面下导航栏超链接CSS */
+.settings-menu a {
+    color: rgb(204,204,204);
+    text-decoration: none;
+    cursor:default;
+}
+
+/* 设置页面下导航栏超链接悬浮CSS */
+.settings-menu a:hover{
+    color: white;
+    transition-duration: 0.4s;  /*动画过渡0.4s*/
+}
+
+/* 设置页面主要内容CSS */
+.settings-content {
+    padding-left: 10px;
+    background-color: rgba(34,39,45,0.50);
+    flex-direction: column;
+    height:100%;
+    width: 100%;
+    color: rgb(204,204,204);
+    font-size: 14px;
+    border:none;
+}
+
+.settings-content p{
+    font-size: 20px;
+}
+.settings-content pre{
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:target{
+    width: 100%;
+    height: 28px;
+    animation: fade 1000ms;
+    -webkit-animation: fade 1000ms;
+}
+
+@keyframes fade {
+    from {
+        background-color: #e5eecc;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1.0;
+
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        background-color: #e5eecc;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1.0;
+
+    }
+}

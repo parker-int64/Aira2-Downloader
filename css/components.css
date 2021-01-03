@@ -1,0 +1,164 @@
+/* 窗体组件CSS */
+.icon {
+    justify-content: left;
+    align-items: center;
+    padding-top: 3px;
+    width: 30px;
+    background-image: url("../assets/icon-A.png");
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+/* 正文标题 */
+.windowTitle {
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: rgb(204, 204, 204);
+    -webkit-user-select: none;
+}
+
+
+/* 窗口控制容器 */
+.windowControlContainer {
+    width: 150px;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    -webkit-app-region: no-drag;
+}
+
+/* 最小化、最大化、向下还原、关闭按钮 */
+.windowMinimizeControl, .windowMaximumControl, .windowMaximumRestore, .windowsClose {
+    height: 30px;
+    width: 50px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.windowMinimizeControl::before {
+    /* content:'\eaba'; */
+    content: '\2013';
+}
+
+
+/* 最大化按钮 --未进行放大--单独框 */
+
+.windowMaximumControl::before{
+    content: '\20DE';
+}
+
+
+/* 最大化按钮 --已放大后还原初始大小--交叠框 */
+.windowMaximumRestore::before{
+    content: '\1F5D7';
+}
+
+/* 按钮悬停时效果 */
+.windowMinimizeControl:hover,.windowMaximumControl:hover,.windowMaximumRestore:hover {
+    background-color: #505050;
+}
+
+/* 关闭窗口按钮 */
+.windowsClose::before {
+    content: '\2715';
+}
+
+.windowsClose:hover{
+    background-color:rgba(232,17,35,.9);
+}
+
+/* 左侧菜单按钮 */
+.menuFunctions {
+    width: 35px;
+    height:35px;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+/* 左侧下载按钮 */
+.app-download {
+    border-radius:50%;
+    background-image: url("../assets/download-icon.png");
+
+}
+
+/* 左侧已下载文件浏览 */
+.app-file-explorer {
+    border-radius: 50%;
+    background-image: url("../assets/file-explorer-icon.png");
+}
+
+
+/* 左侧工具箱按钮 */
+.app-toolkits {
+    border-radius: 50%;
+    background-image: url("../assets/app-toolkit.png");
+}
+
+/* 左侧下方设置按钮 */
+.app-settings {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-image: url("../assets/app-settings.png");
+
+}
+
+/* 左侧功能按键悬停样式 */
+.app-settings:hover, .app-download:hover,.app-file-explorer:hover,.app-toolkits:hover{
+    transition-duration: 0.4s;  /*动画过渡0.4s*/
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); /*鼠标悬停阴影*/
+    border-radius: 50%;
+}
+
+
+/* 放置iframe的div */
+.webPageView {
+    width: 100%;
+    height: calc(100% - 10px);
+    padding: 5px;
+    -webkit-user-drag: none;
+}
+
+
+/*按钮*/
+.button {
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(38,40,44);
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 14px;
+    outline: none;
+    -webkit-app-region: no-drag;
+    -webkit-user-select: none;
+}
+
+.button1 {
+    background-color: rgb(94,97,103);
+}
+
+.float-button {
+    top: 10px;
+    right: 10px;
+    position: fixed;
+}
+
+.button1:hover,.float-button:hover {
+    background-color: #555555;
+    transition-duration: 0.6s;  /*动画过渡0.4s*/
+    box-shadow: 0px 0px 16px 12px rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); /*鼠标悬停阴影*/
+}
+
+
+
+
+
+
+
+
