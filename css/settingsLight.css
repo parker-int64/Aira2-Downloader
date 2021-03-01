@@ -27,6 +27,7 @@ html,body {
     height: 100%;
     display:flex;
     flex-direction: row;
+    overflow-y: auto;
 }
 
 /* 亮色menu */
@@ -87,7 +88,8 @@ html,body {
 .settings-part {
     font-size: 14px;
     margin: 0;
-    padding: 0;
+    padding-top: 5px;
+    padding-left: 20px;
     width:auto;
     height:auto;
     flex-direction: column;
@@ -97,6 +99,32 @@ html,body {
     padding-left: 5px;
     font-size: 14px;
 }
+
+.settings-part select {
+    appearance: none;    /*清除默认样式，必须*/
+    padding-left: 18px;
+    border: 1px solid #cecece;
+    width: 70px;
+    height: 30px;
+    border-radius: 0.25em;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    background:url("../assets/left-arrow.png") no-repeat right center;
+}
+
+.settings-part select:hover{
+    transition-duration: 0.4s;  /*动画过渡0.4s*/
+    background: url("../assets/down-arrow.png") no-repeat right center;
+}
+
+
+.settings-part option {
+    background-color: rgb(236,236,236);
+    font-size: 16px;
+    font-weight: 600;
+}
+
 
 :target{
     width: 100%;
@@ -132,3 +160,50 @@ html,body {
 
     }
 }
+
+
+.save-location {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #cecece;
+    border-radius:5px;
+    width:350px;
+    height:35px;
+}
+
+.save-location span{
+    background-color: rgb(221,221,221);
+    padding: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    color: rgb(97,97,97);
+}
+
+.save-location p{
+    margin:0;
+    padding-top: 7px;
+    padding-bottom: 15px;
+    width: 200px;
+    font-size: 14px;
+    color:rgb(97,97,97);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+}
+
+.directory-select {
+    border-radius: 5px;
+    justify-content: right;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    background: url("../assets/file-25.png") center no-repeat;
+}
+
+
+.directory-select:hover {
+    background-color: rgb(235,235,235);
+    cursor: pointer;
+}
+

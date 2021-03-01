@@ -1,11 +1,10 @@
-# 使用Electron和C++的一款下载器（核心Aira2c）
+# 使用Electron制作的一款下载器（核心Aira2c）
 
 ### 环境需求：
 
 + node >= 14.15.1
 + npm >= 6.14.8
 + Electron >= 11.0.0
-+ C++ boost库
 + visual studio build tool 2015 （非必须，如果需要重新打包软件就必须要）
 
 不保证后续版本对前面版本API完全兼容

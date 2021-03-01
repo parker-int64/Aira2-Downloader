@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new download</title>
+    <link rel="stylesheet" type="text/css" href="../css/new-download.css">
+</head>
+<body>
+    <div class="container">
+        <div class="download-title">
+            <span>新建下载</span>
+            <div class="new-bt-task" title="新建BT任务" id="new-bt">BT</div> 
+            <div class="download-title windowClose" id="window-close"></div>
+        </div>
+        <textarea class="container download-links-input" type="text" id="input-links" placeholder="此处输入下载链接，若有多个链接，请用分号隔开；若新建BT任务，请点击上方BT按钮进行创建"></textarea>
+        <div class="container save-location"><span>下载位置</span><p id="save-location-path">E:\Downloads</p>
+            <div class="directory-select" title="更改下载位置" id="select-save-dir"></div>
+        </div>
+        <div class="container button confirm-button" id="start-download">立即下载</div>
+    </div>
+    <script src="../src/download-tabs.js"></script>
+</body>
+</html>

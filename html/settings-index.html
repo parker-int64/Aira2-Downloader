@@ -4,6 +4,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" id="settings-style" href="../css/settingsLight.css">
     <link rel="stylesheet" type="text/css" id="settings-components-style" href="../css/componentsLight.css">
+    
+    <script>
+        /*
+            此处JS代码是为了在页面加载完成之前能够根据文件中
+            是否开启暗黑主题来自动选择加载CSS
+        */
+        const fs = parent.window.fs
+        const filePath = "./config/settings.json"
+        var raw_data = fs.readFileSync(filePath)
+        var data = JSON.parse(raw_data)
+        var dark_mode =  data["dark-mode"]
+        if(dark_mode == true){
+            document.getElementById("settings-style").href = "../css/settings.css"
+            document.getElementById("settings-components-style").href = "../css/components.css" 
+        } else {
+            document.getElementById("settings-style").href = "../css/settingsLight.css"
+            document.getElementById("settings-components-style").href = "../css/componentsLight.css"
+        }
+        </script>
+
+    <!--此处先加载主体部分CSS，再加载checkbox、radio的CSS避免出现“无样式”页面-->
     <link rel="stylesheet" type="text/css" href="../css/magic-input.css">
 </head>
 <body>
@@ -18,13 +39,141 @@
         <div class = "container settings-content">
             <p id="basic-settings"><b>基本设置</b></p>
             <div class="settings-part">
-                <input type="checkbox" class="mgc-switch mgc-sm" name="switch-theme" id="theme" /><span>暗色主题</span>
+                <input type="checkbox" class="mgr" name="starting-up" id="starting-up" /><span>开机启动</span>
+            </div>
+            <div class="settings-part">
+                <input type="checkbox" class="mgr" name="switch-theme" id="theme" /><span>暗色主题</span>
+            </div>
+            </p>
+
+            <p id="download-settings"><b>下载设置</b>
+            <div class="settings-part">
+                <div class="container save-location"><span>下载位置</span><p id="save-location-path">E:\Downloads</p>
+                    <div class="directory-select" title="更改下载位置" id="select-save-dir"></div>
+                </div>
+            </div>
+            <div class="settings-part">
+                <span>单个任务最大线程数（默认：5）
+                    <select class="cs-select cs-skin-border" id="max-threads">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>    
+                </span>
+            </div>
+            <div class="settings-part">
+                <span>最大同时下载任务数（默认：5）
+                        <select class="cs-select cs-skin-border" id="max-download-tasks">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                </span>
+            </div>
+            <div class="settings-part">
+                <input type="checkbox" class="mgr" name="cut-lowest-link" id="cut-lowest-link" /><span>断开速度过慢的连接</span>
+            </div>
+            <div class="settings-part">
+                <span>下载速度限制（默认：0不限制）
+                    <select class="cs-select cs-skin-border" id="max-download-rate">
+                        <option value="0">0</option>
+                        <option value="256">256</option>
+                        <option value="512">512</option>
+                        <option value="1024">1024</option>
+                        <option value="2048">2048</option>
+                    </select>
+                    KB/s
+                </span>
+            </div>
+            <div class="settings-part">
+                <span>上传速度限制（默认：0不限制）
+                    <select class="cs-select cs-skin-border" id="max-upload-rate">
+                        <option value="0">0</option>
+                        <option value="128">128</option>
+                        <option value="256">256</option>
+                        <option value="512">512</option>
+                        <option value="1024">1024</option>
+                    </select>
+                    KB/s 
+                </span>
+            </div>
+            <div class="settings-part">
+                <span>下载失败尝试重连次数（默认：3次）
+                    <select class="cs-select cs-skin-border" id="max-retry-times">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </span>
+            </div>
+            
+        </p>
+        <p id="advanced-settings"><b>高级设置</b>
+            <div class="settings-part">
+                <span>最小文件分片大小（默认：20MB）</span>
+                <select class="cs-select cs-skin-border" id="file-split-size">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                </select> 
             </div>
 
+            <div class="settings-part">
+                <span>文件分片数量（默认:128）</span>
+                <br><span>注：同一服务器连接数（与文件分片一致）</span>
+                <select class="cs-select cs-skin-border" id="split">
+                    <option value="64">64</option>
+                    <option value="128">128</option>
+                </select> 
+            </div>
+
+            <div class="settings-part">
+                <span>下载磁盘缓存（默认128MB）</span>
+                <select class="cs-select cs-skin-border" id="disk-cache">
+                    <option value="128">128</option>
+                    <option value="256">256</option>
+                    <option value="512">512</option>
+                </select> 
+            </div>
+
+            <div class="settings-part">
+                <input type="checkbox" class="mgr" name="bt-auto-start" id="bt-auto-start" /><span>BT种子下载完成后自动开始BT任务</span>
+            </div>
+
+            <div class="settings-part">
+                <input type="checkbox" class="mgr" name="bt-no-check" id="bt-no-check" /><span>无需再次校验之前进行的BT任务</span>
+            </div>
+
+            <div class="settings-part">
+                <span>单个种子最大连接数（默认：55，当值为0时表示不限制）</span>
+                <select class="cs-select cs-skin-border" id="bt-max-links">
+                    <option value="0">0</option>
+                    <option value="55">55</option>
+                </select> 
+            </div>
+        </p>
+        
+            <p id="notice"><b>提醒</b>
+                <div class="settings-part">
+                    <input type="checkbox" class="mgr" name="download-success-popup" id="download-success-popup" checked /><span>下载完成时右下角弹窗提示</span>
+                </div>
+                <div class="settings-part">
+                    <input type="checkbox" class="mgr" name="download-failed-popup" id="download-failed-popup" checked /><span>下载失败时右下角弹窗提示</span>
+                </div>
+                <div class="settings-part">
+                    <input type="checkbox" class="mgr" name="download-success-alert" id="download-success-alert" checked /><span>下载完成后播放提示音</span>
+                </div>
             </p>
-            <p id="download-settings"><b>下载设置</b></p>
-            <p id="advanced-settings"><b>高级设置</b></p>
-            <p id="notice"><b>提醒</b></p>
             <p id="about"><b>关于</b>
                 <pre>    UI素材均来源于互联网，若有侵权请与作者联系。</pre>
             </p>

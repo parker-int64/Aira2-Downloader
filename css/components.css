@@ -102,7 +102,6 @@
 /* 左侧下方设置按钮 */
 .app-settings {
     margin-bottom: 5px;
-    padding: 5px;
     background-image: url("../assets/app-settings.png");
 
 }
@@ -142,10 +141,6 @@ iframe {
     outline: none;
     -webkit-user-drag: none;
     -webkit-user-select: none;
-}
-
-.button1 {
-    background-color: rgb(94,97,103);
 }
 
 

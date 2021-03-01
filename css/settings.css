@@ -25,25 +25,10 @@ html,body {
 .container {
     width: 100%;
     height: 100%;
+    overflow-y: auto;
     display:flex;
     flex-direction: row;
-}
-
-.container-light {
-    width: 100%;
-    height: 100%;
-    color: rgb(243,243,243);
-    display:flex;
-    flex-direction: row;
-}
-
-/* 亮色container */
-.container-light {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(243,243,243,0.69);
-    display:flex;
-    flex-direction: row;
+    
 }
 
 /* 设置页面下导航栏CSS */
@@ -61,33 +46,6 @@ html,body {
 }
 
 
-/* 亮色menu */
-.settings-menu-light {
-    width: 100px;
-    height: 100%;
-    justify-content: flex-start;
-    align-items: center;
-    border:none;
-    background-color: rgb(243,243,243);
-    font-size: 14px;
-    color: rgb(97,97,97);
-    flex-direction: column;
-    -webkit-user-drag: none;
-}
-
-.settings-menu-light a {
-    color: rgb(97,97,97);
-    text-decoration: none;
-    cursor:default;
-    -webkit-user-drag: none;
-}
-
-
-.settings-menu-light a:hover{
-    color: #c2c2c2;
-    transition-duration: 0.4s;  /*动画过渡0.4s*/
-    -webkit-user-drag: none;
-}
 
 
 /* 设置页面下导航栏超链接CSS */
@@ -118,20 +76,6 @@ html,body {
     -webkit-user-drag: none;
 }
 
-
-/* 亮色content */
-.settings-content-light {
-    padding-left: 10px;
-    background-color: rgb(236,236,236);
-    flex-direction: column;
-    height:100%;
-    width: 100%;
-    color: rgb(97,97,97);
-    font-size: 14px;
-    border:none;
-    -webkit-user-drag: none;
-}
-
 .settings-content p{
     font-size: 20px;
     -webkit-user-drag: none;
@@ -146,15 +90,44 @@ html,body {
 .settings-part {
     font-size: 14px;
     margin: 0;
-    padding: 0;
+    padding-top: 5px;
+    padding-left: 20px;
     width:auto;
     height:auto;
     flex-direction: column;
+
 }
 
 .settings-part span {
     padding-left: 5px;
     font-size: 14px;
+}
+
+
+.settings-part select {
+    color:rgb(204,204,204);
+    appearance: none;    /*清除默认样式，必须*/
+    padding-left: 18px;
+    border: 1px solid #cecece;
+    width: 70px;
+    height: 30px;
+    border-radius: 0.25em;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    background:url("../assets/left-arrow-white.png") no-repeat right center;
+}
+
+.settings-part select:hover{
+    transition-duration: 0.4s;  /*动画过渡0.4s*/
+    background: url("../assets/down-arrow-white.png") no-repeat right center;
+}
+
+
+.settings-part option {
+    background-color: rgb(30,30,30);
+    font-size: 16px;
+    font-weight: 600;
 }
 
 
@@ -191,4 +164,50 @@ html,body {
         opacity: 1.0;
 
     }
+}
+
+
+.save-location {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #cecece;
+    border-radius:5px;
+    width:350px;
+    height:35px;
+}
+
+.save-location span{
+    background-color: rgb(72,75,82);
+    padding: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    color:  rgb(204,204,204);
+}
+
+.save-location p{
+    margin:0;
+    padding-top: 7px;
+    padding-bottom: 15px;
+    width: 200px;
+    font-size: 14px;
+    color: rgb(204,204,204);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+}
+
+.directory-select {
+    border-radius: 5px;
+    justify-content: right;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    background: url("../assets/file-25.png") center no-repeat;
+}
+
+
+.directory-select:hover {
+    background-color:rgb(72,75,82);
+    cursor: pointer;
 }
